@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeTrack U · Créditos UG</title>
+  <style>
+    /* ------------ RESET ------------ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-main: #f3f4f8;
+      --bg-card: #ffffff;
+      --bg-soft: #f8fafc;
+      --border-soft: #e2e8f0;
+      --accent: #2563eb;
+      --accent-soft: #dbeafe;
+      --accent-gold: #f4b93b;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --radius-xl: 1.25rem;
+      --radius-lg: 1rem;
+      --radius-full: 999px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --shadow-strong: 0 24px 60px rgba(15, 23, 42, 0.18);
+      --transition-fast: 0.18s ease;
+      --transition-med: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 0% 0%, #e0f2fe 0%, transparent 55%),
+        radial-gradient(circle at 100% 0%, #fef3c7 0%, transparent 55%),
+        var(--bg-main);
+      font-family: var(--font-main);
+      color: var(--text-main);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 1.75rem auto 3rem auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ------------ NAVBAR ------------ */
+    .navbar {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(226,232,240,0.8);
+      box-shadow: var(--shadow-soft);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      position: sticky;
+      top: 0.75rem;
+      z-index: 20;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-wrap {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fed7aa;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(251,191,36,0.7);
+      box-shadow: 0 10px 25px rgba(245,158,11,0.35);
+    }
+
+    .logo-wrap img {
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-title {
+      font-size: 0.98rem;
+      font-weight: 650;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .nav-link {
+      position: relative;
+      cursor: pointer;
+      padding: 0.25rem 0;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.2rem;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, #2563eb, #22c55e);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-profile {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      color: var(--accent);
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .nav-profile:hover {
+      background: #dbeafe;
+      box-shadow: 0 10px 20px rgba(37,99,235,0.25);
+      transform: translateY(-1px);
+    }
+
+    /* ------------ HERO ------------ */
+    .hero {
+      margin-top: 1.75rem;
+      margin-bottom: 1.5rem;
+      padding: 1.75rem 1.75rem 1.5rem 1.75rem;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #ffffff, #eff6ff);
+      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      gap: 0.9rem;
+      animation: fadeUp 0.8s var(--transition-med) both;
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.6rem;
+      border: 1px solid #bfdbfe;
+      width: fit-content;
+    }
+
+    .hero-title {
+      font-size: clamp(1.5rem, 1.2vw + 1rem, 1.8rem);
+      font-weight: 650;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 60ch;
+      margin-top: 0.3rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-pill {
+      border-radius: var(--radius-full);
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      padding: 0.3rem 0.65rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .hero-pill strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-logo-big {
+      width: 96px;
+      height: 96px;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 3px solid rgba(244,185,59,0.8);
+      box-shadow: 0 18px 40px rgba(234,179,8,0.45);
+      background: #fed7aa;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-logo-big img {
+      width: 130%;
+      height: 130%;
+      object-fit: cover;
+    }
+
+    /* ------------ GRID PRINCIPAL ------------ */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 1.25rem 1.35rem;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med), background 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 0.9s var(--transition-med) both;
+    }
+
+    .card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: var(--shadow-strong);
+      border-color: #cbd5f5;
+      background: #ffffff;
+    }
+
+    .card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .card-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ------------ CALENDARIO ------------ */
+    .calendar-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 1.25rem;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .calendar-month {
+      font-weight: 600;
+    }
+
+    .calendar-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .calendar-nav span {
+      opacity: 0.7;
+    }
+
+    .calendar-grid {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid #e2e8f0;
+      padding: 0.5rem 0.6rem 0.7rem 0.6rem;
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.78rem;
+    }
+
+    .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      text-align: center;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 0.2rem;
+    }
+
+    .day {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      color: var(--text-main);
+    }
+
+    .day span {
+      font-size: 0.8rem;
+    }
+
+    .day:hover {
+      background: #e0ecff;
+      box-shadow: 0 0 0 1px #bfdbfe;
+      transform: translateY(-1px);
+    }
+
+    .day-disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .day-disabled:hover {
+      background: transparent;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .day-dot {
+      position: absolute;
+      bottom: 0.22rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.15rem;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+    }
+
+    .dot-sport { background: #3b82f6; }
+    .dot-culture { background: #8b5cf6; }
+    .dot-entre { background: #f59e0b; }
+    .dot-dev { background: #22c55e; }
+
+    .day-selected {
+      background: #1d4ed8;
+      color: #eff6ff;
+      box-shadow: 0 0 0 1px #1d4ed8, 0 12px 25px rgba(37,99,235,0.45);
+      transform: translateY(-1px);
+    }
+
+    .day-selected .day-dot .dot {
+      opacity: 0.9;
+    }
+
+    .calendar-legend {
+      margin-top: 0.55rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .legend-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+    }
+
+    .day-activities {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .activities-list {
+      border-radius: var(--radius-lg);
+      border: 1px solid #e2e8f0;
+      background: #f9fafb;
+      padding: 0.7rem 0.8rem;
+      display: grid;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      max-height: 190px;
+      overflow-y: auto;
+    }
+
+    .activity-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: baseline;
+    }
+
+    .activity-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .activity-name {
+      font-weight: 500;
+    }
+
+    .activity-meta {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .activity-badge {
+      border-radius: 999px;
+      padding: 0.18rem 0.45rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      background: #e0f2fe;
+      color: #075985;
+      white-space: nowrap;
+    }
+
+    /* ------------ PROGRESO ------------ */
+    .progress-wrapper {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .progress-main {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .progress-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, #ffffff 60%, transparent 61%),
+        conic-gradient(#2563eb 0deg 288deg, #e5e7eb 288deg 360deg);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(37,99,235,0.25);
+    }
+
+    .progress-inner {
+      width: 62%;
+      height: 62%;
+      border-radius: 50%;
+      background: #ffffff;
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .progress-inner strong {
+      font-size: 1.1rem;
+    }
+
+    .progress-inner span {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .progress-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .progress-text strong {
+      color: var(--text-main);
+    }
+
+    .progress-bars {
+      display: grid;
+      gap: 0.55rem;
+      margin-top: 0.25rem;
+      font-size: 0.8rem;
+    }
+
+    .progress-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .progress-label {
+      font-size: 0.78rem;
+      color: var(--text-main);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 6px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+    }
+
+    .pb-sport { background: #3b82f6; }
+    .pb-culture { background: #8b5cf6; }
+    .pb-entre { background: #f59e0b; }
+    .pb-dev { background: #22c55e; }
+
+    /* ------------ EVIDENCIAS & RECOMENDADAS ------------ */
+    .lower-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .drop-area {
+      margin-top: 0.7rem;
+      border-radius: var(--radius-lg);
+      border: 1.5px dashed #cbd5e1;
+      background: #f9fafb;
+      padding: 1.1rem 1rem;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .drop-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      display: grid;
+      place-items: center;
+      color: #2563eb;
+      font-size: 1rem;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+    }
+
+    .drop-btn {
+      margin-top: 0.3rem;
+      border-radius: var(--radius-full);
+      border: none;
+      background: #2563eb;
+      color: #eff6ff;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(37,99,235,0.4);
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .drop-btn:hover {
+      background: #1d4ed8;
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(37,99,235,0.55);
+    }
+
+    .file-name {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .recommended-list {
+      margin-top: 0.7rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid #e2e8f0;
+      background: #f9fafb;
+      padding: 0.8rem 0.9rem;
+      display: grid;
+      gap: 0.55rem;
+      font-size: 0.8rem;
+    }
+
+    .rec-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .rec-left {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .rec-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+    }
+
+    .rec-name {
+      font-weight: 500;
+    }
+
+    .rec-udps {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    /* ------------ FOOTER ------------ */
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .footer-pill {
+      display: inline-block;
+      background: rgba(15,23,42,0.03);
+      border-radius: var(--radius-full);
+      border: 1px solid #e2e8f0;
+      padding: 0.5rem 0.9rem;
+      box-shadow: 0 10px 22px rgba(15,23,42,0.06);
+    }
+
+    .footer-pill strong {
+      color: var(--text-main);
+    }
+
+    /* ------------ ANIMACIONES ------------ */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* ------------ RESPONSIVE ------------ */
+    @media (max-width: 900px) {
+      .layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .calendar-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .progress-main {
+        grid-template-columns: 1fr;
+      }
+      .hero-top {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+      .hero-logo-big {
+        align-self: flex-end;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1.5rem;
+      }
+      .nav-links {
+        order: 3;
+      }
+      .lower-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <div class="logo-wrap">
+        <!-- Logo TimeTrack U: asegúrate de tener timetrack-logo.png en la misma carpeta -->
+        <img src="timetrack-logo.png" alt="TimeTrack U Logo">
+      </div>
+      <div class="nav-brand">
+        <div class="nav-title">TimeTrack U</div>
+        <div class="nav-subtitle">Academic Software · Créditos UG</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <div class="nav-link">Inicio</div>
+      <div class="nav-link">Calendario</div>
+      <div class="nav-link">Mi progreso</div>
+      <div class="nav-link">Evidencias</div>
+    </div>
+
+    <div class="nav-profile">
+      <span>UG</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="hero-eyebrow">
+          <span>Academic Software</span>
+          <span>·</span>
+          <span>Sistema de información de RH</span>
+        </div>
+        <h1 class="hero-title">Gestión de UDPS y créditos para estudiantes de la Universidad de Guanajuato</h1>
+        <p class="hero-subtitle">
+          TimeTrack U concentra en un solo lugar las actividades de deporte, cultura,
+          emprendimiento y desarrollo personal, mostrando cuántas UDPS suma cada una y
+          ayudando a los estudiantes a llevar un registro claro de sus créditos.
+        </p>
+
+        <div class="hero-meta">
+          <span class="hero-pill">
+            <strong>UDPS</strong> Unidades de Aprendizaje
+          </span>
+          <span class="hero-pill">
+            <strong>25 UDPS</strong> = 1 crédito
+          </span>
+          <span class="hero-pill">
+            Enfoque: difusión, registro y evidencia de actividades
+          </span>
+        </div>
+      </div>
+
+      <div class="hero-logo-big">
+        <img src="timetrack-logo.png" alt="TimeTrack U Logo grande">
+      </div>
+    </div>
+  </header>
+
+  <!-- GRID PRINCIPAL -->
+  <section class="layout-grid">
+
+    <!-- COLUMNA IZQUIERDA: CALENDARIO -->
+    <article class="card">
+      <div class="card-title-row">
+        <div>
+          <h2 class="card-title">Calendario de actividades</h2>
+          <p class="card-subtitle">Selecciona un día para ver las actividades y las UDPS que otorga.</p>
+        </div>
+        <div class="card-subtitle">Versión demo · Mayo 2024</div>
+      </div>
+
+      <div class="calendar-wrapper">
+        <!-- Calendario -->
+        <div>
+          <div class="calendar-header">
+            <div class="calendar-month">Mayo 2024</div>
+            <div class="calendar-nav">
+              <span>&lt;</span>
+              <span>&gt;</span>
+            </div>
+          </div>
+
+          <div class="calendar-grid">
+            <div class="calendar-weekdays">
+              <div>Dom</div><div>Lun</div><div>Mar</div><div>Mié</div>
+              <div>Jue</div><div>Vie</div><div>Sáb</div>
+            </div>
+            <div class="calendar-days" id="calendarDays">
+              <!-- Fila 1 -->
+              <div class="day day-disabled"><span></span></div>
+              <div class="day day-disabled"><span></span></div>
+              <div class="day" data-day="1"><span>1</span></div>
+              <div class="day" data-day="2"><span>2</span></div>
+              <div class="day" data-day="3"><span>3</span></div>
+              <div class="day" data-day="4"><span>4</span></div>
+              <div class="day" data-day="5"><span>5</span></div>
+              <!-- Fila 2 -->
+              <div class="day" data-day="6"><span>6</span></div>
+              <div class="day" data-day="7"><span>7</span></div>
+              <div class="day" data-day="8"><span>8</span></div>
+              <div class="day" data-day="9"><span>9</span></div>
+              <div class="day" data-day="10"><span>10</span></div>
+              <div class="day" data-day="11"><span>11</span></div>
+              <div class="day" data-day="12"><span>12</span></div>
+              <!-- Fila 3 -->
+              <div class="day" data-day="13"><span>13</span></div>
+              <div class="day" data-day="14"><span>14</span></div>
+              <div class="day" data-day="15">
+                <span>15</span>
+                <div class="day-dot">
+                  <div class="dot dot-sport"></div>
+                  <div class="dot dot-culture"></div>
+                </div>
+              </div>
+              <div class="day" data-day="16">
+                <span>16</span>
+                <div class="day-dot">
+                  <div class="dot dot-entre"></div>
+                </div>
+              </div>
+              <div class="day" data-day="17"><span>17</span></div>
+              <div class="day" data-day="18"><span>18</span></div>
+              <div class="day" data-day="19"><span>19</span></div>
+              <!-- Fila 4 -->
+              <div class="day" data-day="20"><span>20</span></div>
+              <div class="day" data-day="21"><span>21</span></div>
+              <div class="day" data-day="22">
+                <span>22</span>
+                <div class="day-dot">
+                  <div class="dot dot-dev"></div>
+                </div>
+              </div>
+              <div class="day" data-day="23"><span>23</span></div>
+              <div class="day" data-day="24"><span>24</span></div>
+              <div class="day" data-day="25"><span>25</span></div>
+              <div class="day" data-day="26"><span>26</span></div>
+              <!-- Fila 5 -->
+              <div class="day" data-day="27"><span>27</span></div>
+              <div class="day" data-day="28"><span>28</span></div>
+              <div class="day" data-day="29"><span>29</span></div>
+              <div class="day" data-day="30"><span>30</span></div>
+              <div class="day" data-day="31"><span>31</span></div>
+              <div class="day day-disabled"><span></span></div>
+              <div class="day day-disabled"><span></span></div>
+            </div>
+          </div>
+
+          <div class="calendar-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#3b82f6"></span>Deporte</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#8b5cf6"></span>Cultura</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>Emprendimiento</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#22c55e"></span>Desarrollo personal</div>
+          </div>
+        </div>
+
+        <!-- Actividades del día -->
+        <div>
+          <p class="day-activities" id="dayInfo">
+            Selecciona un día con puntos de color para ver sus actividades.
+          </p>
+          <div class="activities-list" id="activitiesList">
+            <!-- Se llena con JS -->
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- COLUMNA DERECHA: PROGRESO -->
+    <aside class="card">
+      <div class="card-title-row">
+        <div>
+          <h2 class="card-title">Progreso general</h2>
+          <p class="card-subtitle">Ejemplo de cómo un estudiante vería sus UDPS acumuladas.</p>
+        </div>
+      </div>
+
+      <div class="progress-wrapper">
+        <div class="progress-main">
+          <div class="progress-circle">
+            <div class="progress-inner">
+              <strong>60</strong>
+              <span>UDPS</span>
+            </div>
+          </div>
+          <div class="progress-text">
+            <p><strong>60 / 75 UDPS</strong> completadas en este ejemplo.</p>
+            <p>Esto equivale aproximadamente a <strong>2.4 créditos</strong> (25 UDPS = 1 crédito).</p>
+            <p style="margin-top:0.4rem;">En una versión conectada al sistema institucional, estos datos se actualizarían automáticamente cada que se valide una evidencia.</p>
+          </div>
+        </div>
+
+        <div class="progress-bars">
+          <div class="progress-row">
+            <div class="progress-label">Deporte</div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill pb-sport" style="width: 80%;"></div>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-muted);">20 UDPS</div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-label">Cultura</div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill pb-culture" style="width: 60%;"></div>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-muted);">15 UDPS</div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-label">Emprendimiento</div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill pb-entre" style="width: 50%;"></div>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-muted);">10 UDPS</div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-label">Desarrollo personal</div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill pb-dev" style="width: 70%;"></div>
+            </div>
+            <div style="font-size:0.75rem;color:var(--text-muted);">14 UDPS</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- EVIDENCIAS + RECOMENDADAS -->
+  <section class="lower-grid">
+    <article class="card">
+      <div class="card-title-row">
+        <div>
+          <h2 class="card-title">Evidencias de asistencia</h2>
+          <p class="card-subtitle">Sube comprobantes para asignar UDPS a cada actividad.</p>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-muted);">
+        En la versión institucional, cada evidencia se vincularía a una actividad y a la matrícula del estudiante.
+        Aquí mostramos una versión demo del flujo de carga.
+      </p>
+
+      <div class="drop-area">
+        <div class="drop-icon"☁️</div>
+        <div>
+          Arrastra tu evidencia aquí<br>
+          <span style="font-size:0.78rem;">o selecciona un archivo desde tu dispositivo.</span>
+        </div>
+        <button class="drop-btn" id="uploadBtn">Seleccionar archivo</button>
+        <input type="file" id="fileInput" style="display:none" />
+        <div class="file-name" id="fileName"></div>
+      </div>
+    </article>
+
+    <aside class="card">
+      <div class="card-title-row">
+        <div>
+          <h2 class="card-title">Actividades recomendadas</h2>
+          <p class="card-subtitle">Ejemplos de eventos que sumarían UDPS esta semana.</p>
+        </div>
+      </div>
+
+      <div class="recommended-list">
+        <div class="rec-item">
+          <div class="rec-left">
+            <div class="rec-dot" style="background:#3b82f6;"></div>
+            <div class="rec-name">Rally deportivo UG</div>
+          </div>
+          <div class="rec-udps">8 UDPS · Deporte</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-left">
+            <div class="rec-dot" style="background:#f59e0b;"></div>
+            <div class="rec-name">Taller de emprendimiento social</div>
+          </div>
+          <div class="rec-udps">6 UDPS · Emprendimiento</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-left">
+            <div class="rec-dot" style="background:#8b5cf6;"></div>
+            <div class="rec-name">Concierto Ensamble UG</div>
+          </div>
+          <div class="rec-udps">10 UDPS · Cultura</div>
+        </div>
+        <div class="rec-item">
+          <div class="rec-left">
+            <div class="rec-dot" style="background:#22c55e;"></div>
+            <div class="rec-name">Sesión de manejo del estrés</div>
+          </div>
+          <div class="rec-udps">5 UDPS · Des. personal</div>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-pill">
+      <strong>TimeTrack U</strong> — prototipo académico desarrollado para la materia de Sistemas de Información de RH.
+      Propiedad de <strong>Academic Software</strong>. Versión demo para la Universidad de Guanajuato.
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // --------- Datos demo de actividades por día ---------
+  const activitiesByDay = {
+    15: [
+      {
+        name: "Torneo relámpago de fútbol",
+        type: "Deporte",
+        time: "16:00",
+        place: "Cancha UG",
+        udps: 8
+      },
+      {
+        name: "Noche de cine universitario",
+        type: "Cultura",
+        time: "19:00",
+        place: "Auditorio principal",
+        udps: 6
+      }
+    ],
+    16: [
+      {
+        name: "Curso básico de emprendimiento",
+        type: "Emprendimiento",
+        time: "15:00",
+        place: "Sala de usos múltiples",
+        udps: 10
+      }
+    ],
+    22: [
+      {
+        name: "Taller de habilidades socioemocionales",
+        type: "Desarrollo personal",
+        time: "12:00",
+        place: "Aula A-503",
+        udps: 7
+      }
+    ]
+  };
+
+  const activitiesListEl = document.getElementById("activitiesList");
+  const dayInfoEl = document.getElementById("dayInfo");
+  const calendarDays = document.querySelectorAll(".day[data-day]");
+
+  function renderActivitiesForDay(day) {
+    const activities = activitiesByDay[day] || [];
+    activitiesListEl.innerHTML = "";
+
+    if (activities.length === 0) {
+      dayInfoEl.textContent = "En esta versión demo, este día no tiene actividades registradas.";
+      const empty = document.createElement("div");
+      empty.textContent = "Selecciona otro día con puntos de color en el calendario.";
+      empty.style.fontSize = "0.78rem";
+      empty.style.color = "#64748b";
+      activitiesListEl.appendChild(empty);
+      return;
+    }
+
+    dayInfoEl.textContent = `Actividades del día ${day} de mayo · Ejemplo:`;
+    activities.forEach(act => {
+      const item = document.createElement("div");
+      item.className = "activity-item";
+
+      const main = document.createElement("div");
+      main.className = "activity-main";
+
+      const name = document.createElement("div");
+      name.className = "activity-name";
+      name.textContent = act.name;
+
+      const meta = document.createElement("div");
+      meta.className = "activity-meta";
+      meta.textContent = `${act.type} · ${act.time} · ${act.place}`;
+
+      main.appendChild(name);
+      main.appendChild(meta);
+
+      const badge = document.createElement("div");
+      badge.className = "activity-badge";
+      badge.textContent = `${act.udps} UDPS`;
+
+      item.appendChild(main);
+      item.appendChild(badge);
+      activitiesListEl.appendChild(item);
+    });
+  }
+
+  calendarDays.forEach(dayEl => {
+    dayEl.addEventListener("click", () => {
+      if (dayEl.classList.contains("day-disabled")) return;
+
+      calendarDays.forEach(d => d.classList.remove("day-selected"));
+      dayEl.classList.add("day-selected");
+
+      const dayNumber = dayEl.getAttribute("data-day");
+      renderActivitiesForDay(dayNumber);
+    });
+  });
+
+  // --------- File input para evidencias ---------
+  const uploadBtn = document.getElementById("uploadBtn");
+  const fileInput = document.getElementById("fileInput");
+  const fileNameEl = document.getElementById("fileName");
+
+  uploadBtn.addEventListener("click", () => fileInput.click());
+
+  fileInput.addEventListener("change", () => {
+    if (fileInput.files && fileInput.files[0]) {
+      fileNameEl.textContent = `Archivo seleccionado: ${fileInput.files[0].name}`;
+    } else {
+      fileNameEl.textContent = "";
+    }
+  });
+</script>
+
+</body>
+</html>
